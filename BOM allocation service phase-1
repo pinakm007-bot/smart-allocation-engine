@@ -1,0 +1,35 @@
+The Demand Allocation Engine is a backend-driven application designed to support manufacturing planning by determining production feasibility based on available inventory and predefined Bill of Materials (BOM). The system enables users to input demand at the SKU level along with current inventory data, and intelligently evaluates how much production can be achieved. By leveraging BOM relationships, it translates demand into component-level requirements and aligns them with available stock.
+
+The core functionality of the application revolves around a structured processing pipeline that includes data ingestion, validation, requirement calculation, and allocation logic. BOM data is maintained as master data within a PostgreSQL database, while inventory and demand inputs are provided dynamically through CSV or Excel files. The system validates all inputs against the BOM to ensure consistency, calculates required quantities for each component, and then performs allocation to determine feasible production quantities and identify shortages.
+
+The application is built using a modular architecture with services such as BOM management, input ingestion, validation, requirement calculation, and allocation engine. It is designed as a stateless backend system using FastAPI, ensuring scalability and ease of integration in future phases. While Phase 1 focuses on core allocation logic and reporting, the system is structured to support future enhancements such as inventory persistence, substitution logic, and user interface integration.
+
+🔹 Key Features:
+
+BOM-based requirement calculation (SKU → component level)
+
+Inventory vs demand allocation logic
+
+CSV/Excel-based input ingestion
+
+Validation layer for data integrity
+
+Fabric-level and SKU-level output reports
+
+🔹 Tech Stack:
+
+Backend: Python (FastAPI)
+
+Database: PostgreSQL (for BOM master data)
+
+Input Format: CSV / Excel
+
+Architecture: Modular service-based design
+
+🔹 Use Case:
+
+Manufacturing planning
+
+Production feasibility analysis
+
+Inventory utilization optimization
